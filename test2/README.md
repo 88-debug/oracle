@@ -25,7 +25,7 @@ SQL> GRANT con_res_view TO maqiao_user;
 SQL> exit
 ```
 
-![](./test2-01.png)
+![test2-01](./test2-01.png)
 
 ### 第2步
 新用户maqiao_user连接到pdborcl，创建表mytable和视图myview，插入数据，最后将myview的SELECT对象权限授予hr用户。
@@ -46,8 +46,8 @@ SQL>exit
 
 
 
-![](./test2-02.png)
-![](./test2-03.png)
+![test2-02](./test2-02.png)
+![test2-03](./test2-03.png)
 
 ### 第3步
 用户hr连接到pdborcl，查询maqiao_user授予它的视图myview
@@ -57,10 +57,10 @@ SQL> SELECT * FROM new_user.myview;
 SQL> exit
 ```
 
-![](./test2-04.png)
+![test2-04](./test2-04.png)
 
 测试一下同学用户，查询LYCDU用户授予的视图myview
-![](./test2-07.png)
+![test2-07](./test2-07.png)
 
 ### 数据库和表空间占用分析
 
@@ -75,8 +75,8 @@ SQL>SELECT a.tablespace_name "表空间名",Total/1024/1024 "大小MB",
         group  BY tablespace_name)b
  where  a.tablespace_name = b.tablespace_name;
 ```
-![](./test2-05.png)
+![test2-05](./test2-05.png)
 
-![](./test2-06.png)
+![test2-06](./test2-06.png)
 
 可以看到因为同学们都在表空间users存储表的数据，所以他的容量已经没剩多少了，使用率已经达到61.25%
