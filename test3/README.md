@@ -18,7 +18,7 @@
 
 ## 授权表空间
 
-![授权表空间](授权表空间01.png)
+![授权表空间](./授权表空间01.png)
 
 ### 创建orders表
 
@@ -26,7 +26,7 @@
 
 
 
-![](03.png)
+![](./03.png)
 
 
 
@@ -149,7 +149,7 @@ PARTITION BY RANGE (ORDER_DATE)
 );
 ```
 
-![](创建order04.png)
+![](./创建order04.png)
 
 
 
@@ -177,11 +177,15 @@ PARTITION BY REFERENCE (order_details_fk1);
 
 ```
 
-![](创建order_details05.png)
+![](./创建order_details05.png)
+
+### 授权
 
 
 
-![授权](授权06.png)
+![授权](./授权06.png)
+
+### 插入数据
 
 ```
 declare
@@ -253,7 +257,9 @@ end;
 
 
 
-![插入数据](插入数据07.png)
+![插入数据](./插入数据07.png)
+
+### 查询数据条数
 
 ```
 select count(*) from orders;
@@ -262,7 +268,9 @@ select count(*) from order_details;
 
 
 
-![](查看条数08.png)
+![](./查看条数08.png)
+
+### 使用sys账号查询信息
 
 ```
 set autotrace on
@@ -277,7 +285,7 @@ a.ORDER_ID=b.order_id and
 a.order_date between to_date('2017-1-1','yyyy-mm-dd') and to_date('2018-6-1','yyyy-mm-dd');
 ```
 
-![](使用sys用户查询09.png)
+![](./使用sys用户查询09.png)
 
 
 
